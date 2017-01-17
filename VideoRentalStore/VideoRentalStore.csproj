@@ -231,9 +231,26 @@
     <Compile Include="Migrations\201701170553221_addNamePropToMembershiptype.Designer.cs">
       <DependentUpon>201701170553221_addNamePropToMembershiptype.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701170605211_addBirthdayPropToCustomer.cs" />
+    <Compile Include="Migrations\201701170605211_addBirthdayPropToCustomer.Designer.cs">
+      <DependentUpon>201701170605211_addBirthdayPropToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701170616057_makeBirthdayPropNullable.cs" />
+    <Compile Include="Migrations\201701170616057_makeBirthdayPropNullable.Designer.cs">
+      <DependentUpon>201701170616057_makeBirthdayPropNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701170634459_addGenre.cs" />
+    <Compile Include="Migrations\201701170634459_addGenre.Designer.cs">
+      <DependentUpon>201701170634459_addGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701170637572_populateGenres.cs" />
+    <Compile Include="Migrations\201701170637572_populateGenres.Designer.cs">
+      <DependentUpon>201701170637572_populateGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -306,6 +323,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -339,6 +357,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701170553221_addNamePropToMembershiptype.resx">
       <DependentUpon>201701170553221_addNamePropToMembershiptype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170605211_addBirthdayPropToCustomer.resx">
+      <DependentUpon>201701170605211_addBirthdayPropToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170616057_makeBirthdayPropNullable.resx">
+      <DependentUpon>201701170616057_makeBirthdayPropNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170634459_addGenre.resx">
+      <DependentUpon>201701170634459_addGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170637572_populateGenres.resx">
+      <DependentUpon>201701170637572_populateGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
