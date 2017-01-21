@@ -255,6 +255,10 @@
     <Compile Include="Migrations\201701210035280_18yearsValidation.Designer.cs">
       <DependentUpon>201701210035280_18yearsValidation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701210641142_updateMovieModel.cs" />
+    <Compile Include="Migrations\201701210641142_updateMovieModel.Designer.cs">
+      <DependentUpon>201701210641142_updateMovieModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -388,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701210035280_18yearsValidation.resx">
       <DependentUpon>201701210035280_18yearsValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701210641142_updateMovieModel.resx">
+      <DependentUpon>201701210641142_updateMovieModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

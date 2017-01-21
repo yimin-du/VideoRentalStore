@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using VideoRentalStore.Models;
 using VideoRentalStore.ViewModels;
+using System.Data.Entity.Validation;
 
 namespace VideoRentalStore.Controllers
 {
@@ -57,9 +58,8 @@ namespace VideoRentalStore.Controllers
 
             var genres = _context.Genres.ToList();
             // create movieFormViewModel
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
                 Genres = genres
             };
 
@@ -67,22 +67,42 @@ namespace VideoRentalStore.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
-            if(movie.Id == 0)
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel(movie)
+                {
+                    Genres = _context.Genres.ToList()
+                };
+
+                return View("MovieForm", viewModel);
+            }
+
+            if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
                 _context.Movies.Add(movie);
-            } else
+            }
+            else
             {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
                 movieInDb.Name = movie.Name;
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;
-                movieInDb.DateReleased = movie.DateReleased;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
             }
 
-            _context.SaveChanges();
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
 
             return RedirectToAction("Index", "Movies");
         }
