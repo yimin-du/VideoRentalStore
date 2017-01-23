@@ -16,7 +16,7 @@ namespace VideoRentalStore.App_Start
             Mapper.CreateMap<Customer, CustomerDto>();
             Mapper.CreateMap<Movie, MovieDto>();
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
-
+            Mapper.CreateMap<Genre, GenreDto>();
 
 
             // Dto to Domain
